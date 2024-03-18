@@ -11,7 +11,15 @@ const useDeliveries = () => {
         onRescheduleDelivery
     } = useContext(DeliveriesContext)
 
-    return { deliveries, fetchDeliveries, selectedDelivery, selectDelivery, onConfirmDelivery, onRescheduleDelivery}
+    const getDeliveryAction = () => {
+        return {
+            buttonText: selectedDelivery.hasToBeRescheduled ? 'Reschedule' : 'Confirm',
+            title: selectedDelivery.hasToBeRescheduled ? 'Reschedule your order' : 'Confirm your order',
+            processDelivery: !selectedDelivery.hasToBeRescheduled ? onConfirmDelivery : onRescheduleDelivery
+        }
+    }
+
+    return { deliveries, fetchDeliveries, selectedDelivery, selectDelivery, getDeliveryAction}
 }
 
 export default useDeliveries

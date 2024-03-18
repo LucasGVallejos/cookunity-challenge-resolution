@@ -60,7 +60,6 @@ export const DeliveriesProvider = ({ children }) => {
         } catch (error) {
             throw error;
         }
-       
     }, [selectedDelivery])
 
     const contextValue = {

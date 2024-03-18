@@ -3,10 +3,8 @@ import './Header.scss';
 import useDeliveries from '../../../hooks/useDeliveries';
 
 export const Header: FC = () => {
-  const { deliveries , selectedDelivery, selectDelivery, onConfirmDelivery, onRescheduleDelivery} = useDeliveries();
-  const buttonText = selectedDelivery.hasToBeRescheduled ? 'Reschedule' : 'Confirm';
-
-  const onClick = !selectedDelivery.hasToBeRescheduled ? onConfirmDelivery : onRescheduleDelivery;
+  const { deliveries , selectDelivery, getDeliveryAction} = useDeliveries();
+  const { buttonText, processDelivery } = getDeliveryAction()
 
   const formatDate = (dateString: string): string => {
     const options: Intl.DateTimeFormatOptions = {
@@ -45,7 +43,7 @@ export const Header: FC = () => {
         <button
           className="btn-primary btn-buy"
           data-test-id="header-cta"
-          onClick={onClick}>
+          onClick={processDelivery}>
           {buttonText}
         </button>
       </div>
