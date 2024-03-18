@@ -1,0 +1,78 @@
+.header-container {
+  background-color: black;
+  height: 80px;
+  position: sticky;
+  top: 0;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    .btn-buy {
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding-right: 24px;
+      padding-left: 24px;
+    }
+
+    .tabs-container {
+      flex: 1;
+      display: flex;
+      height: 100%;
+    }
+
+    .tabs {
+      max-width: 1000px;
+      overflow-x: auto;
+      display: flex;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      .tab {
+        min-width: 200px;
+        padding: 0px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .date {
+          // font-family: $cui-font-family-tt-norms;
+          // font-size: $cui-font-base;
+          // line-height: $cui-line-height-2xl;
+          white-space: nowrap;
+          color: white;
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 0px;
+          background-color: var(--gold);
+          transition: 0.2s;
+        }
+
+        &.active {
+          // background-color: $cui-wine-color-700;
+          opacity: 1;
+          transform: translateY(0);
+
+          .date {
+            font-weight: bold;
+          }
+
+          &:after {
+            height: 5px;
+          }
+        }
+      }
+    }
+  }
+}

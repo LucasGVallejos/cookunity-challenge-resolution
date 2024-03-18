@@ -1,0 +1,21 @@
+.subheader-container {
+  background-color: #eeeeee;
+}
+
+.subheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subheader .cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+}
+
+.subheader .cta .copy {
+  font-size: 1.1rem;
+  font-weight: bold;
+}

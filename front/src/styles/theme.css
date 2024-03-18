@@ -1,0 +1,11 @@
+:root {
+  --gold: #f6ca64;
+}
+
+.btn-primary {
+  background-color: var(--gold);
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  height: min-content;
+}

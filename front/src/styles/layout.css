@@ -1,0 +1,22 @@
+.page__container {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+.page__main {
+  width: 100%;
+  flex: 1 1 0%;
+}
+
+.page__horizontal-space {
+  margin: auto;
+  max-width: 77rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.page__vertical-space {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
